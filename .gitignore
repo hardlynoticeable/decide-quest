@@ -1,0 +1,17 @@
+/frontend/composer.lock
+/frontend/node_modules
+/frontend/package-lock.json
+/frontend/vendor
+/frontend/.env
+/frontend/.env.production
+
+/backend/composer.lock
+/backend/node_modules
+/backend/package-lock.json
+/backend/vendor
+/backend/.env
+
+/frontend/note_modules
+/frontend/build
+
+*.local
