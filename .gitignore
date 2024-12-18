@@ -4,6 +4,8 @@
 /frontend/vendor
 /frontend/.env
 /frontend/.env.production
+/frontend/.pnp
+*.pnp.js
 
 /backend/composer.lock
 /backend/node_modules
@@ -15,3 +17,7 @@
 /frontend/build
 
 *.local
+
+*npm-debug.log*
+*yarn-debug.log*
+*yarn-error.log* 

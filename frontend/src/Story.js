@@ -10,7 +10,6 @@ import fairy from './images/fairy.png';
 import flower from './images/flower.png';
 import king from './images/king.png';
 import mermaid from './images/mermaid.png';
-import pixie from './images/pixie1.png';
 import princess from './images/princess.png';
 import queen from './images/queen.png';
 import unicorn from './images/unicorn.png';
@@ -35,17 +34,16 @@ const slideDown = keyframes`
 // Add this constant before the Story component
 const IMAGE_RULES = [
   { keywords: ['wolf', 'wolves'], image: wolf },
-  { keywords: ['hero', 'bowman'], image: bowman },
+  { keywords: ['hero', 'heroes', 'bowman', 'bowmen'], image: bowman },
   { keywords: ['dwarf', 'dwarves'], image: dwarves },
   { keywords: ['fairy', 'fairie', 'fairies'], image: fairy },
-  { keywords: ['flower', 'garden'], image: flower },
+  { keywords: ['flower', 'flowers', 'garden'], image: flower },
   { keywords: ['king', 'emperor'], image: king },
   { keywords: ['mermaid', 'mermaids'], image: mermaid },
-  { keywords: ['pixie', 'spell'], image: pixie },
   { keywords: ['princess'], image: princess },
   { keywords: ['queen', 'empress'], image: queen },
-  { keywords: ['unicorn'], image: unicorn },
-  { keywords: ['witch', 'hag', 'old woman'], image: witch },
+  { keywords: ['unicorn', 'unicorns'], image: unicorn },
+  { keywords: ['witch', 'witches', 'hag', 'old woman', 'sorceress'], image: witch },
 ];
 
 // Add this helper function before the Story component
@@ -92,6 +90,16 @@ export const Story = ({ onFirstClick }) => {
       setDisplayedStory(story);
     }
   }, [story, displayedStory]);
+
+  // Scroll to top when displayedStory changes
+  useEffect(() => {
+    if (displayedStory) {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      });
+    }
+  }, [displayedStory]);
 
   if (loading) {
     return (
@@ -183,6 +191,7 @@ export const Story = ({ onFirstClick }) => {
           src={getImageForDescription(displayedStory?.pageDescription)}
           width={"100%"}
           height={"auto"}
+          marginTop={"25px"}
         />
       </Box>
     </Flex>
@@ -219,7 +228,7 @@ async function loadStory() {
   // Start new story load
   sessionStorage.setItem('loading_story', 'true');
   try {
-    const response = await fetch('http://localhost:1102/newadventure');
+    const response = await fetch('https://api.decide.quest/newadventure');
     const data = await response.json();
 
     if (data.status !== 'success') {
@@ -291,7 +300,7 @@ async function nextPage(option, setData) {
     Object.entries(pageOptions).map(([key, value]) => [String(key), value])
   );
 
-  let url = `http://localhost:1102/page/${thread_id}/${run_id}`;
+  let url = `https://api.decide.quest/page/${thread_id}/${run_id}`;
 
   try {
     const response = await fetch(url, {
