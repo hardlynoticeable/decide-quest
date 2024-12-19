@@ -21,4 +21,3 @@ backend/phpinfo.php
 *npm-debug.log*
 *yarn-debug.log*
 *yarn-error.log*
-frontend/.env.production
