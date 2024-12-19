@@ -6,6 +6,8 @@ An interactive web application that uses OpenAI's Assistant API to generate a ch
 
 The application generates pages that each contain a text description of the setting and situation, culminating in a decision point.  The page also contains a set of options that the user can choose from, and the choice they make is used to generate the next page.  The story ends when the reader either reaches the goal of their quest or dies trying.
 
+Try it out at [Decide.Quest](https://decide.quest).
+
 ## Prerequisites
 
 - PHP 8.2 or higher
