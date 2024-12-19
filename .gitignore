@@ -10,6 +10,7 @@
 /backend/package-lock.json
 /backend/vendor
 /backend/.env
+/backend/phpinfo.php
 
 /frontend/note_modules
 /frontend/build
