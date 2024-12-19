@@ -80,5 +80,10 @@ These are System Instructions that I used to create the Assistant:
 
 ## Technical Details
 
-### API Integration
-- Uses OpenAI's official PHP client
+### Frontend
+- Uses ReactJS with Chakra UI
+
+### Backend
+- Uses PHP 8.2
+- Uses Composer for dependency management
+- Uses the OpenAI PHP client for API interactions
