@@ -8,7 +8,7 @@ The application generates pages that each contain a text description of the sett
 
 ## Prerequisites
 
-- PHP 8.0 or higher
+- PHP 8.2 or higher
 - Composer
 - OpenAI API Key
 - OpenAI Assistant ID (use the OpenAI platform/playground to create an Assistant and copy the ID)
