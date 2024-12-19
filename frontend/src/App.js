@@ -1,5 +1,5 @@
 import theme from './theme'
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   ChakraProvider,
   Box,
@@ -11,6 +11,7 @@ import { Logo } from './Logo';
 import { Story } from './Story';
 import { Privacy } from './Privacy';
 import { Opening } from './Opening';
+import { pageview } from './gtag';
 
 function App() {
   const [showBranding, setShowBranding] = useState(true);
@@ -18,6 +19,11 @@ function App() {
   const handleFirstClick = () => {
     setShowBranding(false);
   };
+  
+  useEffect(() => {
+    // Track the initial page load
+    pageview(window.location.pathname);
+  }, []);
   
   return (
     <ChakraProvider theme={theme}>
