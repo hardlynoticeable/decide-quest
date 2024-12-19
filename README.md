@@ -1,4 +1,4 @@
-# Interactive Online Generative AI Choose-Your-Own-Adventure Book
+# Generative AI Choose-Your-Own-Adventure Book
 
 An interactive web application that uses OpenAI's Assistant API to generate a choose-your-own-adventure story in real-time.  
 
