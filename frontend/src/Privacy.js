@@ -21,7 +21,7 @@ export const Privacy = () => {
       <Collapse in={isOpen} transition={"height .2s ease"}>
         <Text fontSize={{ base: '0.8rem', md: '1.1rem' }} px={{ base: 0, md: '200px' }} >
           <Text>
-              Application created by <Link href="mailto:stephenakins@gmail.com">Stephen Akins</Link> with the help of OpenAI.
+              Application created by <Link href="mailto:stephenakins@gmail.com">Decide.Quest Akins</Link> with the help of OpenAI's ChatGPT.  This is an <Link href="https://github.com/hardlynoticeable/decide-quest">Open Source project</Link>.
           </Text> 
         </Text>
       </Collapse>
