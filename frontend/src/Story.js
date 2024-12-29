@@ -15,6 +15,8 @@ import queen from './images/queen.png';
 import unicorn from './images/unicorn.png';
 import witch from './images/witch.png';
 
+import { event } from './gtag'; // Import the event function
+
 // Add these animations at the top of the file
 const spin = keyframes`
   from { transform: rotate(0deg); }
@@ -267,6 +269,14 @@ async function handleOptionClick(
   
   // Set selected option (for spinning icon and faded options)
   setSelectedOption(option);
+  
+  // Track the event in Google Analytics
+  event({
+    action: 'click_page_option',
+    category: 'User Interaction',
+    label: option,
+    value: 1
+  });
   
   // Load new content first (while current content is still visible)
   const newData = await nextPage(option, setData);

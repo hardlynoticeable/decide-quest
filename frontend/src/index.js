@@ -1,4 +1,4 @@
-import React, { StrictMode } from 'react';
+import React from 'react';
 import * as ReactDOM from 'react-dom/client';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
@@ -8,18 +8,29 @@ import { pageview } from './gtag';
 const container = document.getElementById('root');
 const root = ReactDOM.createRoot(container);
 
-/*
-root.render(
-  <StrictMode>
-    <App />
-  </StrictMode>
-);
-*/
-
-// Remove StrictMode wrapper
 root.render(
   <App />
 );
+
+// Initialize GA
+const GA_TRACKING_ID = process.env.REACT_APP_GA_MEASUREMENT_ID;
+
+if (GA_TRACKING_ID) {
+  const script = document.createElement('script');
+  script.async = true;
+  script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`;
+  document.head.appendChild(script);
+  console.log('GA script added');
+
+  const inlineScript = document.createElement('script');
+  inlineScript.innerHTML = `
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '${GA_TRACKING_ID}');
+  `;
+  document.head.appendChild(inlineScript);
+}
 
 // Track initial page load
 pageview(window.location.pathname);
