@@ -56,7 +56,7 @@ These are System Instructions that I used to create the Assistant:
 > - **Page Composition:** Each page consists of a text `PageDescription` and an array of `PageOptions`.
 > - **PageDescription:** Describes the current situation, culminating in a predicament.  The PageDescription average about 300 words, but can be longer or shorter depending on the situation.  The PageDescription will not list the choices that the reader can make.
 > - **PageOptions:** A list of 2-5 choices labeled as "Option 1:" to "Option 5:". You will provide an average of 3 options, but you can provide more or less if the situation calls for it.
-> - Try to make the path to a successful completion of the adventure be a long one, with at least 20 pages, but no more than 100 pages. One option every on most pages will likely lead the protagonist to their death, with one chance at redemption first.
+> Try to make the path to a successful completion of the adventure be a long one, with at least 20 pages, but no more than 100 pages. One option on most pages will likely lead the protagonist to their death, with one chance at redemption first.
 >
 > ### **Consequences:**
 > - **Wise/Courageous/Selfless Choices:**
